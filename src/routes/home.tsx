@@ -1,19 +1,20 @@
-import { useNavigate } from 'react-router-dom';
-import { auth } from '../firebase';
+import styled from 'styled-components';
+import PostForm from '../components/post-form';
+import TimeLine from '../components/timeline';
+
+const Wrapper = styled.div`
+  display: grid;
+  gap: 50px;
+  overflow-y: scroll;
+  grid-template-rows: 1fr 5fr;
+  height: 100vh;
+`;
 
 export default function Home() {
-  const navigate = useNavigate();
-  const logOut = async () => {
-    const ok = confirm('Are you sure you want to log out?');
-    if (ok) {
-      await auth.signOut();
-      navigate('/login');
-    }
-  };
-
   return (
-    <h1>
-      <button onClick={logOut}>Log Out</button>
-    </h1>
+    <Wrapper>
+      <PostForm />
+      <TimeLine />
+    </Wrapper>
   );
 }
