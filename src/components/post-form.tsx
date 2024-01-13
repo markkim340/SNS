@@ -34,15 +34,14 @@ const TextArea = styled.textarea`
 
 const AttachFileButton = styled.label`
   padding: 10px 0px;
-  color: #b4b4b4;
+  color: #ffbe98;
   font-weight: 700;
   text-align: center;
   border-radius: 20px;
-  border: 2px solid #b4b4b4;
+  border: 2px solid #ffbe98;
   cursor: pointer;
   &:hover {
-    color: #ffbe98;
-    border: 2px solid #ffbe98;
+    opacity: 0.8;
   }
 `;
 
@@ -52,7 +51,7 @@ const AttachFileInput = styled.input`
 
 const SubmitButton = styled.input`
   background-color: #ffbe98;
-  color: #696969;
+  color: white;
   border: none;
   border-radius: 20px;
   padding: 10px 0px;
@@ -122,7 +121,7 @@ export default function PostForm() {
   return (
     <Form onSubmit={onSubmit}>
       <TextArea onChange={onChange} value={content} placeholder="what is happening?" rows={5} maxLength={180} />
-      <AttachFileButton htmlFor="file">{file ? 'Image added ✅' : 'Add Image'}</AttachFileButton>
+      <AttachFileButton htmlFor="file">{file ? 'Image added ✅' : '+ Add Image'}</AttachFileButton>
       <AttachFileInput onChange={onFileChange} type="file" id="file" accept="image/*" />
       <SubmitButton type="submit" value={isLoading ? 'Posting...' : 'Post'} />
     </Form>

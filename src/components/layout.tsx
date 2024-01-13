@@ -6,9 +6,9 @@ const Wrapper = styled.div`
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr 4fr;
-  padding: 50px 0px;
+  padding: 50px 30px;
   width: 100%;
-  height: 100px;
+  height: 100%;
   max-width: 860px;
 `;
 
@@ -34,8 +34,8 @@ const MenuItem = styled.div`
     height: 30px;
   }
   &.log-out {
-    border-color: pink;
-    background-color: pink;
+    border-color: #ffbe98;
+    background-color: #ffbe98;
   }
   &:hover {
     opacity: 0.75;
