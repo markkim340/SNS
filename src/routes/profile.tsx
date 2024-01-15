@@ -90,7 +90,7 @@ export default function Profile() {
 
   return (
     <Wrapper>
-      <AvatarUpload htmlFor="avatar">{Boolean(avatar) ? <AvatarImg src={avatar} /> : <img src="/user-icon.svg"></img>}</AvatarUpload>
+      <AvatarUpload htmlFor="avatar">{avatar ? <AvatarImg src={avatar} /> : <img src="/user-icon.svg"></img>}</AvatarUpload>
       <AvatarInput id="avatar" onChange={onAvatarChange} type="file" accept="image/*" />
       <Name>{user?.displayName ?? 'Anonymous'}</Name>
       <Posts>
